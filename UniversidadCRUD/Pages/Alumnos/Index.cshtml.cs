@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using UniversidadCRUD.Data;
 using UniversidadCRUD.Models;
@@ -19,14 +20,31 @@ namespace UniversidadCRUD.Pages.Alumnos
             _context = context;
         }
 
+        public IList<Alumno> Alumnos { get; set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+        public SelectList? Matrículas { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string? Matrícula { get; set; }
+
         public IList<Alumno> Alumno { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Alumno != null)
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from m in _context.Alumno
+                                            orderby m.Nombre
+                                            select m.Nombre;
+
+            //Using System.Linq;
+            var Alumnos = from m in _context.Alumno
+                          select m;
+
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Alumno = await _context.Alumno.ToListAsync();
+                Alumnos = Alumnos.Where(s => s.Nombre.Contains(SearchString));
             }
+            Alumno = await Alumnos.ToListAsync();
         }
     }
 }

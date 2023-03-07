@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model UniversidadCRUD.Pages.Alumnos.IndexModel
 
 @{
@@ -10,6 +10,15 @@
 <p>
     <a asp-page="Create">Añadir nuevo</a>
 </p>
+
+<form>
+    <p>
+        Nombre: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
