@@ -11,4 +11,5 @@ public class Alumno
     public int Matrícula { get; set; }
     public string? Carrera { get; set; }
     public string? Grupo { get; set; }
+    public string? Ciclo { get; set; } = string.Empty;
 }

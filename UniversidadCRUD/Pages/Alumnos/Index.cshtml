@@ -34,6 +34,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Alumno[0].Grupo)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alumno[0].Ciclo)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -52,6 +55,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Grupo)
             </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Ciclo)
+             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |

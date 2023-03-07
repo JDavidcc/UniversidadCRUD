@@ -17,7 +17,7 @@ public static class SeedData
                 throw new ArgumentNullException("Null RazorPagesMovieContext");
             }
 
-            // Look for any movies.
+            // Look for any Alumnos.
             if (context.Alumno.Any())
             {
                 return;   // DB has been seeded
@@ -30,14 +30,16 @@ public static class SeedData
                     Nombre = "Jesús David Cervantes Cañedo",
                     Matrícula = 1930083,
                     Carrera = "Ing. En Sistemas Computacionales",
-                    Grupo = "SCOMM91"
+                    Grupo = "SCOMM91",
+                    Ciclo = "2021-43B"
                 },
                 new Alumno
                 {
                     Nombre = "Ana angela García Carrazco",
                     Matrícula = 1930023,
                     Carrera = "Diseño Grafíco",
-                    Grupo = "los de diseño"
+                    Grupo = "los de diseño",
+                    Ciclo = "2021-43B"
                 },
 
                 new Alumno
@@ -45,7 +47,8 @@ public static class SeedData
                     Nombre = "Jorge Gabriel Ochoa Ruvalcaba",
                     Matrícula = 1930074,
                     Carrera = "Ing. Industrial",
-                    Grupo = "los de industrial"
+                    Grupo = "los de industrial",
+                    Ciclo = "2021-43B"
                 },
 
                 new Alumno
@@ -53,7 +56,8 @@ public static class SeedData
                     Nombre = "Erick Castro Soto",
                     Matrícula = 1930060,
                     Carrera = "Ing. En Sistemas Computacionales",
-                    Grupo = "SCOMM91"
+                    Grupo = "SCOMM91",
+                    Ciclo = "2021-43B"
                 }
 
             );
